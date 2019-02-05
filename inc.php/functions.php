@@ -1,4 +1,6 @@
 <?php
+//Prep and execution for retrieving entries in descending order by date (latest entries first)
+
  function get_them_entries() {
      include 'inc/connections.php';
 
