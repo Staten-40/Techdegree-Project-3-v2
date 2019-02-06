@@ -30,6 +30,22 @@ include ('inc/connections.php');
         <section>
             <div class="container"> 
                 <div class="entry-list">
+
+                <!--<article>
+
+                <?php
+               /* include 'header.php';
+
+                    foreach(get_them_entries() as $entry) {                           
+                        $date2 = date('m d, Y', strtotime());
+
+                        echo '<article><h2><a href="detail.php?id=' . $entry['id'] . '" > ' . $entry['title'] . "</a></h2>
+                        <time datetime . '. $entry[date] . ' >$date2</time></article>"; */
+                        ?>
+            
+                    </article>
+                        -->                           
+                    
                     <article>
                         <h2><a href="detail.html">The Best Day I’ve Ever Had</a></h2>
                         <time datetime="2016-01-31">January 31, 2016</time>
@@ -45,7 +61,7 @@ include ('inc/connections.php');
                     <article>
                         <h2><a href="detail_4.html">"Dude, where’s my car?"</a></h2>
                         <time datetime="2016-01-31">January 31, 2016</time>
-                    </article>
+                    </article> -->
                 </div>
             </div>
         </section>
