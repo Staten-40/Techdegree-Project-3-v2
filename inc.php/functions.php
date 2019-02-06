@@ -1,22 +1,23 @@
 <?php
-//Prep and execution for retrieving entries in descending order by date (latest entries first)
+//Prep and execution for retrieving entries in descending order by date (latest entries first)...The "prepare statement"
 
  function get_them_entries() {
-     include 'inc/connections.php';
+     include ('inc/connections.php');
 
-    try { 
+ try { 
     $sql =  "SELECT * FROM entries ORDER BY date DESC";
     $results = $db->prepare($sql);
     $results->execute();
  } catch (Exeption $e) {
-     echo "Unable to get that entry.,/br>";
+     echo "Unable to get that entry."/br>";
      echo $e->getMessage();
  }
- 
- $entries = $results->fetchAll();
- return $entries;
 
- ?>
+ 
+ $entries = $results->fetchAll(PDO::FETCH_ASSOC);
+ return $entries;
+ 
+
  
 
      
