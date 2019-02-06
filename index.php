@@ -1,6 +1,7 @@
 <?php 
 
-include ('inc/functions.php');
+include ('inc/journal.db');
+include ('inc/connections.php');
 
 ?>
 
