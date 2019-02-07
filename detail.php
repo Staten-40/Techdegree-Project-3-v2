@@ -1,7 +1,3 @@
-<?php
-include ('new.php');
-?>
-
 <!DOCTYPE html>
 <html>
     <head>

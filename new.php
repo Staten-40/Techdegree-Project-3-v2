@@ -1,5 +1,5 @@
 <?php
-include ('details.php');
+include ('detail.php');
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ include ('details.php');
     </head>
 
     <?php
-    header('Loction: header.php');
+     include ('inc/functions.php');
     ?>
 
     <body>

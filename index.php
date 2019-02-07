@@ -62,7 +62,6 @@ include ('inc/functions.php');
                         <time datetime="2016-01-31">January 31, 2016</time>
                     </article> -->
 
-                    <input type="submit" value="Add Entry" class="button">
                     
                 </div>
             </div>
