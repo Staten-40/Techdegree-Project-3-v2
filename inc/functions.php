@@ -23,7 +23,8 @@
 
 //Add new entry: Created function to include all table elements to new entry
 
-/*function add_that_entry(title, date, time_spent, learned, resources) {
+
+/*function add_that_entry($title, $date, $time_spent, $learned, $resources) {
     include ('connections.php');
 
     $sql = 'INSERT INTO entries(title, date, time_spent, learned, resources) VALUE(?,?,?,?,?);
@@ -39,10 +40,13 @@ $results->execute();
 
 $entry = $results->fetch();
     } catch(Exception $e) {
-            return $entry; */
+            return $entry; 
 
 
-    } 
+   } */
+
+ //} 
+
 
 
 

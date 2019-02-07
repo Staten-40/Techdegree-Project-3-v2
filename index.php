@@ -1,5 +1,5 @@
 <?php 
-include include ('inc/functions.php');
+include ('inc/functions.php');
 ?>
 
 <!DOCTYPE html>
