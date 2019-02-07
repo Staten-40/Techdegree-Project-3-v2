@@ -40,7 +40,7 @@ include ('inc/functions.php');
                     foreach(get_them_entries() as $entry) {                           
                     $date2 = date('F d, Y', strtotime($entry['date']));
 
-                    echo '<article><h2><a href="detail.php?id=' . $entry['id'] . '" > ' . $entry['title'] . "</a></h2>";
+                    echo '<article><h2><a href="detail.php?id" =' . $entry['id'] . '" > ' . $entry['title'] . "</a></h2>";
                     echo '<time datetime=" '. $entry['date'] . '" > '. $date2  . '</time></article>';
                     }
                     ?>
@@ -61,6 +61,9 @@ include ('inc/functions.php');
                         <h2><a href="detail_4.html">"Dude, where’s my car?"</a></h2>
                         <time datetime="2016-01-31">January 31, 2016</time>
                     </article> -->
+
+                    <input type="submit" value="Add Entry" class="button">
+                    
                 </div>
             </div>
         </section>
