@@ -1,7 +1,7 @@
 <?php 
 
-include ('inc/journal.db');
-include ('inc/connections.php');
+include include ('inc/functions.php');
+
 
 ?>
 
@@ -19,7 +19,9 @@ include ('inc/connections.php');
         <link rel="stylesheet" href="css/site.css">
     </head>
     <body>
-    <?php 
+    
+      <!--Included header to index.php -->
+      <?php 
     include ('inc/header.php');
     ?>
 
@@ -35,8 +37,20 @@ include ('inc/connections.php');
         <section>
             <div class="container"> 
                 <div class="entry-list">
-                    <article>
-                        <h2><a href="detail.html">The Best Day I’ve Ever Had</a></h2>
+
+                    <!-- List view created to contain a list of journal entries, each hyperlinked to a detail page -->a
+                    <!-- ucwords() added to capitlize titles -->
+                    <?php
+                    foreach(get_them_entries() as $entry) {                           
+                    $date2 = date('F d, Y', strtotime($entry['date']));
+
+                    echo '<article><h2><a href="detail.php?id=' . $entry['id'] . '" > ' . ucwords($entry['title']) . "</a></h2>";
+                    echo '<time datetime=" '. $entry['date'] . '" > '. $date2  . '</time></article>';
+                    }
+                    ?>
+
+
+                       <!--<h2><a href="detail.html">The Best Day I’ve Ever Had</a></h2>
                         <time datetime="2016-01-31">January 31, 2016</time>
                     </article>
                     <article>

@@ -5,16 +5,16 @@
      include ('connections.php');
 
  try { 
-    $sql =  "SELECT * FROM entries ORDER BY date DESC";
+    $sql =  'SELECT * FROM entries ORDER BY date DESC';
     $results = $db->prepare($sql);
     $results->execute();
  } catch (Exception $e) {
-     echo "Unable to get that entry. /br>";
+     echo "Unable to get that entry. </br>";
      echo $e->getMessage();
  }
 
  
- $entries = $results->fetchAll;
+ $entries = $results->fetchAll();
  return $entries;
  
 
