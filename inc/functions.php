@@ -21,25 +21,25 @@
 
 }
 
-//Add new entry: Created  function to include all table elements to new entry
+//Add new entry: Created function to include all table elements to new entry
 
-function add_new_entry (title, date, time_spent, learned, resources) {
-    include (connections.php);
+/*function add_that_entry(title, date, time_spent, learned, resources) {
+    include ('connections.php');
 
     $sql = 'INSERT INTO entries(title, date, time_spent, learned, resources) VALUE(?,?,?,?,?);
 
     try {
 $results = $db->prepare($sql);
-$results->bindValue(1,['title'], PDO::PARAM_STR);
-$results->bindValue(2,['date'], PDO::PARAM_INT);
-$results->bindValue(3,['time_spent'], PDO::PARAM_INT);
-$results->bindValue(4,['learned'], PDO::PARAM_STR);
-$results->bindValue(5,['resources'], PDO::PARAM_STR);
+$results->bindValue(1, $title, PDO::PARAM_STR);
+$results->bindValue(2, $date, PDO::PARAM_INT);
+$results->bindValue(3, $time_spent, PDO::PARAM_INT);
+$results->bindValue(4, $learned, PDO::PARAM_STR);
+$results->bindValue(5, $resources, PDO::PARAM_STR);
 $results->execute();
 
 $entry = $results->fetch();
     } catch(Exception $e) {
-            return $entry; 
+            return $entry; */
 
 
     } 

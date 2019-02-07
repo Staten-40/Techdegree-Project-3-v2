@@ -1,10 +1,6 @@
 <?php 
-
-include include ('functions.php');
-
-
+include include ('inc/functions.php');
 ?>
-
 
 <!DOCTYPE html>
 <html>
