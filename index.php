@@ -1,6 +1,6 @@
 <?php 
 
-include include ('inc/functions.php');
+include include ('functions.php');
 
 
 ?>
@@ -38,13 +38,13 @@ include include ('inc/functions.php');
             <div class="container"> 
                 <div class="entry-list">
 
-                    <!-- List view created to contain a list of journal entries, each hyperlinked to a detail page -->a
-                    <!-- ucwords() added to capitlize titles -->
+                    <!-- List view created to contain a list of journal entries, each hyperlinked to a detail page -->
+                    
                     <?php
                     foreach(get_them_entries() as $entry) {                           
                     $date2 = date('F d, Y', strtotime($entry['date']));
 
-                    echo '<article><h2><a href="detail.php?id=' . $entry['id'] . '" > ' . ucwords($entry['title']) . "</a></h2>";
+                    echo '<article><h2><a href="detail.php?id=' . $entry['id'] . '" > ' . $entry['title'] . "</a></h2>";
                     echo '<time datetime=" '. $entry['date'] . '" > '. $date2  . '</time></article>';
                     }
                     ?>
