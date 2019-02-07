@@ -14,6 +14,22 @@
 
     <?php
      include ('inc/functions.php');
+
+     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING)); 
+        $date = trim(filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING));
+        $time_spent = trim(filter_input(INPUT_POST, 'time_spent', FILTER_SANITIZE_STRING));
+        $learned = trim(filter_input(INPUT_POST, 'learned', FILTER_SANITIZE_STRING));
+        $resources = trim(filter_input(INPUT_POST, 'resources', FILTER_SANITIZE_STRING));
+
+        if (empty($title) || empty($date)) {
+            $error_msg = "Time and date of new entry are required";
+        } else {
+            echo "title = $title<br /.";
+            echo "date = $date<br /.";
+     }
+
+     }
     ?>
 
     <body>
@@ -29,7 +45,15 @@
             <div class="container">
                 <div class="new-entry">
                     <h2>New Entry</h2>
-                    <form>
+
+                     <?php
+                     if (isset($error_msg))) {
+                         echo "<p class = 'message'>$error_msg</p>";
+                     }
+                     
+                     ?>
+
+                    <form class="form-container form-add" method ="post" action="new.php">
                         <label for="title"> Title</label>
                         <input id="title" type="text" name="title"><br>
                         <label for="date">Date</label>
