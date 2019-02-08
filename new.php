@@ -29,7 +29,6 @@
             
           add_that_entry('title', 'date', 'time_spent', 'learned', 'resources');
             
-            
           } 
             
         }
