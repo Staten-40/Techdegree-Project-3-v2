@@ -25,10 +25,15 @@
         if (empty($title) || empty($date)) {
             $error_msg = "Time and date of new entry are required";
         } else {
-            echo "title = $title<br />";
-            echo "date = $date<br />";   
+          //Calling the add entry function to add a new entry post to the list of entries
+            
+          add_that_entry('title', 'date', 'time_spent', 'learned', 'resources');
+            
+            
+          } 
+            
         }
-     }
+     
     ?>
 
     <body>
