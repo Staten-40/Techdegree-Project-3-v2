@@ -23,7 +23,6 @@
 
 //Add new entry: Created function to include all table elements to new entry
 
-
 function add_that_entry($title, $date, $time_spent, $learned, $resources) {
     include ('connections.php');
 
@@ -44,6 +43,11 @@ return $entry;
 
    }
  } 
+
+ //Calling the add entry function to add a new entry post to the list of entries
+add_that_entry('title', 'date', 'time_spent', 'learned', 'resources' );
+
+?>
  
 
 

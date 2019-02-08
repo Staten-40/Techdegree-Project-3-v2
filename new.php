@@ -25,10 +25,9 @@
         if (empty($title) || empty($date)) {
             $error_msg = "Time and date of new entry are required";
         } else {
-            echo "title = $title<br /.";
-            echo "date = $date<br /.";
-     }
-
+            echo "title = $title<br />";
+            echo "date = $date<br />";   
+        }
      }
     ?>
 
@@ -47,7 +46,7 @@
                     <h2>New Entry</h2>
 
                      <?php
-                     if (isset($error_msg))) {
+                     if (isset($error_msg)) {
                          echo "<p class = 'message'>$error_msg</p>";
                      }
                      
