@@ -27,7 +27,7 @@
         } else {
           //Calling the add entry function to add a new entry post to the list of entries
             
-          add_that_entry('title', 'date', 'time_spent', 'learned', 'resources');
+          add_that_entry($title, $date, $time_spent, $learned, $resource);
             
           } 
             
