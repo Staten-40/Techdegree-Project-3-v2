@@ -40,7 +40,7 @@ include ('inc/functions.php');
                     foreach(get_them_entries() as $entry) {                           
                     $date2 = date('F d, Y', strtotime($entry['date']));
 
-                    echo '<article><h2><a href="detail.php?id" =' . $entry['id'] . '" > ' . $entry['title'] . "</a></h2>";
+                    echo '<article><h2><a href="detail.php?id" =' . $entry['id'] . '  > ' . $entry['title'] . "</a></h2>";
                     echo '<time datetime=" '. $entry['date'] . '" > '. $date2  . '</time></article>';
                     }
                     ?>

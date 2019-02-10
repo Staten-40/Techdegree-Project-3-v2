@@ -55,15 +55,16 @@
         $date = trim(filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING));
         $time_spent = trim(filter_input(INPUT_POST, 'timeSpent', FILTER_SANITIZE_STRING));
         $learned = trim(filter_input(INPUT_POST, 'whatILearned', FILTER_SANITIZE_STRING));
-        $resources = trim(filter_input(INPUT_POST, 'resourcesToRemember', FILTER_SANITIZE_STRING));
+        $resources = trim(filter_input(INPUT_POST, 'ResourcesToRemember', FILTER_SANITIZE_STRING));
 
 
         //Create add/entry page that appropritely receives data from the user in each field displyed
         //An error messsage pops up if user neglects to input title and date
         //Calling the add entry function to add a new entry post to the list of entries
         //User is redirected to index.php once the form is submitted
-        if (empty($title) || empty($date) || empty($time_spent) || empty($learned) || empty($resources)) {
-            $error_msg = "Yo!   Heads up! All fields are required!";
+
+        if (empty($title) || empty($date)) {
+            $error_msg = "Yo!   Heads up!  You at least needs the title and date!";
         } else {
             if(add_that_entry($title, $date, $time_spent, $learned, $resources)) {
                 header('Location: index.php');
