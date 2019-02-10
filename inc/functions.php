@@ -25,8 +25,8 @@
 
 function add_that_entry($title, $date, $time_spent, $learned, $resources) {
     include ('connections.php');
-
-    $sql = 'INSERT INTO entries(title, date, time_spent, learned, resources) VALUE(?,?,?,?,?)';
+   
+    $sql = 'INSERT INTO entries(title, date, time_spent, learned, resources) VALUES(?,?,?,?,?)';
 
     try {
 $results = $db->prepare($sql);
@@ -39,10 +39,13 @@ $results->execute();
 $entry = $results->fetch();
 return $entry; 
 
-    } catch(Exception $e) {          
+    } catch(Exception $e) {  
+        echo "Error: " . $e->getMessage() . "<br />";
+        return false;
 
    }
- } 
+   return true;
+ }  
 
  ?>
  

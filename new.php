@@ -22,16 +22,31 @@
         $learned = trim(filter_input(INPUT_POST, 'learned', FILTER_SANITIZE_STRING));
         $resources = trim(filter_input(INPUT_POST, 'resources', FILTER_SANITIZE_STRING));
 
-        if (empty($title) || empty($date)) {
-            $error_msg = "Time and date of new entry are required";
+        //Create add/entry page that appropritely receives data from the user in each field displyed
+        //An error messsage pops up if user neglects to input title and date
+        //Calling the add entry function to add a new entry post to the list of entries
+        //User is redirected to index.php once the form is submitted
+        if (empty($title) || empty($date) || empty($time_spent) || empty($learned) || empty($resources)) {
+            $error_msg = "Yo!   Heads up! All fields are required!";
         } else {
-          //Calling the add entry function to add a new entry post to the list of entries
+            if(add_that_entry($title, $date, $time_spent, $learned, $resources)) {
+                header:('Location: index.php');
+                exit; 
+            } else {
+                $error_msg = "Sorry, dude.  Couldn't add that one.";
+            }       
             
-          add_that_entry($title, $date, $time_spent, $learned, $resource);
+        }
+
+            
+          
+            
+         
+            
             
           } 
             
-        }
+        
      
     ?>
 
