@@ -21,6 +21,25 @@
 
 }
 
+/*function show_them_entries() {
+    include ('connections.php');
+
+try { 
+   $sql =  'SELECT * FROM entries ORDER BY date DESC';
+   $results = $db->prepare($sql);
+   $results->execute();
+} catch (Exception $e) {
+    echo "Unable to get that entry. </br>";
+    echo $e->getMessage();
+}
+
+
+$entries = $results->fetchAll();
+return $entries;
+
+
+}*/
+
 //Add new entry: Created function to include all table elements to new entry
 
 function add_that_entry($title, $date, $time_spent, $learned, $resources) {
