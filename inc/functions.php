@@ -55,10 +55,8 @@ $results->bindValue(3, $time_spent, PDO::PARAM_STR);
 $results->bindValue(4, $learned, PDO::PARAM_STR);
 $results->bindValue(5, $resources, PDO::PARAM_STR);
 $results->execute();
-$entry = $results->fetch();
-return $entry; 
 
-    } catch(Exception $e) {  
+} catch(Exception $e) {  
         echo "Error: " . $e->getMessage() . "<br />";
         return false;
 
