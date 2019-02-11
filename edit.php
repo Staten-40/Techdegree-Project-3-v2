@@ -16,14 +16,19 @@ include ('inc/functions.php');
         <link rel="stylesheet" href="css/site.css">
     </head>
     <body>
-        <header>
+
+      <!--Included header to index.php -->
+
+        <?php include('inc/header.php'); ?>
+
+        <!-- <header>
             <div class="container">
                 <div class="site-header">
                     <a class="logo" href="index.html"><i class="material-icons">library_books</i></a>
                     <a class="button icon-right" href="new.html"><span>New Entry</span> <i class="material-icons">add</i></a>
                 </div>
             </div>
-        </header>
+        </header> -->
         <section>
             <div class="container">
                 <div class="edit-entry">

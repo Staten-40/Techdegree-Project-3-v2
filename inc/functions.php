@@ -46,12 +46,14 @@ $results->execute();
  }  
 
 
-function show_that_entry() {
+function show_that_entry($id) {
     include ('connections.php');
 
 try { 
    $sql =  'SELECT * FROM entries WHERE id=?';
+
    $results = $db->prepare($sql);
+   $results->bindValue(1, $id, PDO::PARAM_STR);
    $results->execute();
 } catch (Exception $e) {
     echo "Unable to get that entry. </br>";
@@ -59,11 +61,12 @@ try {
 }
 
 
-$entries = $results->fetchAll();
-return $entries;
-
+$entry = $results->fetch(PDO::FETCH_ASSOC);
+return $entry;
 
 }
+
+
 
 ?>
  
