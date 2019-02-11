@@ -40,7 +40,7 @@ $results = show_that_entry($_GET['id']);
                 <div class="entry-list single">
                     <article>
                         <h1><?php echo $results['title']; ?></h1>
-                        <time><?php echo $date2; ?></time>
+                        <time datetime><?php echo $results['date']; ?></time>
                         <div class="entry">
                             <h3>Time Spent: </h3>
                             <p><?php $results['time_spent']; ?></p>

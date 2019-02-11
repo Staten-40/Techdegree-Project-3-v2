@@ -6,7 +6,7 @@
 
 body {
 	font-size: 16px;
-	color: #033b36;
+	color: #023a35;
 	font-family: 'Arial';
 	font-weight: 400;
 	background-color: #FADBD8;
@@ -91,7 +91,7 @@ h3 {
 	margin: 0;
 	font-weight: 400;
 	line-height: 1em;
-	color: #000;
+	color: rgb(2, 48, 2);
 }
 h1 {
 	font-size: 44px;
@@ -99,11 +99,11 @@ h1 {
 }
 h2 {
 	font-size: 32px;
-	color: green;
+	color: rgb(5, 58, 5);
 }
 h2 a {
 	text-decoration: none;
-	color: #033b36;
+	color: rgb(5, 58, 5);
 	font-family: Comic 'Lucida Sans', sans-serif;
 }
 h3 {
@@ -231,7 +231,7 @@ input[type=submit] {
 .message {
 	border: 1px solid rgb(77, 2, 2);
 	border-radius: 4px;
-	color:white;
+	color: yellow;
 	background: rgb(77, 2, 2);
 	text-align: center;
 }

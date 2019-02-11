@@ -33,6 +33,16 @@ include ('inc/functions.php');
             <div class="container">
                 <div class="edit-entry">
                     <h2>Edit Entry</h2>
+
+                 <?php 
+
+                   /* $results = edit_that_entry($title, $date, $time_spent, $learned, $resources) {
+                          ***sql statement here***
+                         } */
+                    
+
+                ?>
+
                     <form>
                         <label for="title"> Title</label>
                         <input id="title" type="text" name="title"><br>
