@@ -38,22 +38,27 @@ $results = show_that_entry($_GET['id']);
         <section>
             <div class="container">
                 <div class="entry-list single">
+
+                     <!-- The detail page that lists the articles and all associated data on click from the home page.-->
+                     <!-- Results are echoed out to disply title, date, time spent, what was learned, and resources from each individual enttry -->
+
                     <article>
                         <h1><?php echo $results['title']; ?></h1>
-                        <time datetime><?php echo $results['date']; ?></time>
+                        <time datetime="><?php echo $results['date']; ?><?php echo date('F d, Y', strtotime($results['date'])); ?></time>
+
                         <div class="entry">
                             <h3>Time Spent: </h3>
-                            <p><?php $results['time_spent']; ?></p>
+                            <p><?php echo $results['time_spent']; ?></p>
                         </div>
                         <div class="entry">
                             <h3>What I Learned:</h3>
-                            <?php $results['learned']; ?>
+                            <?php echo $results['learned']; ?>
                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut rhoncus felis, vel tincidunt neque.</p>
                             <p>Cras egestas ac ipsum in posuere. Fusce suscipit, libero id malesuada placerat, orci velit semper metus, quis pulvinar sem nunc vel augue. In ornare tempor metus, sit amet congue justo porta et. Etiam pretium, sapien non fermentum consequat, <a href="">dolor augue</a> gravida lacus, non accumsan. Vestibulum ut metus eleifend, malesuada nisl at, scelerisque sapien.</p> -->
                         </div>
                         <div class="entry">
                             <h3>Resources to Remember:</h3>
-                            <?php $results['resources']; ?> 
+                            <?php echo $results['resources']; ?> 
 
                            <!--  <ul>
                                 <li><a href="">Lorem ipsum dolor sit amet</a></li>
@@ -66,7 +71,8 @@ $results = show_that_entry($_GET['id']);
                 </div>
             </div>
             <div class="edit">
-                <p><a href="edit.php">Edit Entry</a></p>
+            <!-- Push to the edit page -->
+                <p><a href="edit.php?id=?<?php echo $results['id']; ?>">Edit Entry</a></p>
             </div>
         </section>
         <footer>

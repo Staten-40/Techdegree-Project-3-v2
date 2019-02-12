@@ -32,16 +32,22 @@ include ('inc/functions.php');
         <section>
             <div class="container">
                 <div class="edit-entry">
-                    <h2>Edit Entry</h2>
+                    <h2>>Edit Entry</h2>
 
-                 <?php 
+                 <?php
 
                    /* $results = edit_that_entry($title, $date, $time_spent, $learned, $resources) {
                           ***sql statement here***
+                          $sql = 'INSERT INTO entries(title, date, time_spent, learned, resources) VALUES(?,?,?,?,?)';
                          } */
+                         if(isset($_GET['id'])) {
+                            list($entry_id, $title, $date, $time_spent, $learned, $resources) = edit_that_entry(filter_input (INPUT_GET, 'id, FILTER_SANITIZE_NUMBER_INT'));
+                         }
+
+                         ?>
                     
 
-                ?>
+            
 
                     <form>
                         <label for="title"> Title</label>

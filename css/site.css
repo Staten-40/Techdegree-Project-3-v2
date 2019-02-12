@@ -6,7 +6,7 @@
 
 body {
 	font-size: 16px;
-	color: #023a35;
+	color: #004d00;
 	font-family: 'Arial';
 	font-weight: 400;
 	background-color: #FADBD8;
@@ -91,19 +91,20 @@ h3 {
 	margin: 0;
 	font-weight: 400;
 	line-height: 1em;
-	color: rgb(2, 48, 2);
+	color:#004d00;
 }
 h1 {
 	font-size: 44px;
 	margin-bottom: 12px;
+	color:#004d00;
 }
 h2 {
 	font-size: 32px;
-	color: rgb(5, 58, 5);
+	color: #004d00;
 }
 h2 a {
 	text-decoration: none;
-	color: rgb(5, 58, 5);
+	color: #004d00;
 	font-family: Comic 'Lucida Sans', sans-serif;
 }
 h3 {
@@ -111,6 +112,7 @@ h3 {
 	font-family: 'Work Sans', serif;
 	font-weight: 600;
 	text-transform: uppercase;
+	color: #004d00;
 }
 p {
 	line-height: 1.8em;
@@ -121,6 +123,7 @@ p a {
 	padding: 0;
 	color: #678f89;
 	text-decoration: none;
+	color: #004d00;
 }
 ul li {
 	line-height: 1.8em;
@@ -131,6 +134,7 @@ ul li a {
 	line-height: 1.8em;
 	color: #678f89;
 	text-decoration: none;
+	color: #004d00;  
 }
 
 
@@ -145,31 +149,37 @@ ul li a {
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 70px 0 150px 0;
+	color: #004d00;
 }
 .edit-entry h2,
 .new-entry h2 {
 	margin-bottom: 35px;
+	color: #004d00;
 }
 .entry-list article {
 	margin-bottom: 70px;
 	text-align: center;
+	color: #004d00;
 }
 .entry-list article:last-child {
 	margin-bottom: 0;
 }
 .entry-list article h2 {
 	margin-bottom: 8px;
+	color: #004d00;
 }
 .entry-list.single {
 	padding-bottom: 70px;
 }
 .entry-list.single time {
 	font-size: 18px;
+	color: #004d00;
 }
 .entry {
 	max-width: 800px;
 	margin: 75px auto 0 auto;
 	text-align: left;
+	color: #004d00;
 }
 .entry p {
 	margin-bottom: 40px;
@@ -178,11 +188,13 @@ ul li a {
 	padding-bottom: 80px;
 	text-align: center;
 	margin: 0 auto;
+	color: #004d00;
 }
 .edit a {
 	font-weight: 400;
 	text-transform: uppercase;
 	font-size: 18px;
+	color: #004d00;
 }
 
 

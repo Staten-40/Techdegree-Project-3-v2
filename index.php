@@ -40,7 +40,7 @@ include ('inc/functions.php');
                     $date2 = date('F d, Y', strtotime($entry['date']));
 
                     echo '<article><h2><a href="detail.php?id=' . $entry['id'] .  ' " > ' . $entry['title'] . "</a></h2>";
-                    echo '<time datetime=" '. $entry['date'] . '" > '. $date2  . '</time></article>';
+                    echo '<time datetime="2016-01-02'. $entry['date'] . '" > '. $date2  . '</time></article>';
                     }
                     ?>
 

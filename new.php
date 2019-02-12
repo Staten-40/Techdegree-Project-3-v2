@@ -3,7 +3,6 @@
 include ('inc/functions.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    
-   
    $title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING)); 
    $date = trim(filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING));
    $time_spent = trim(filter_input(INPUT_POST, 'timeSpent', FILTER_SANITIZE_STRING));
@@ -19,12 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    if (empty($title) || empty($date)) {
        $error_msg = "Yo!   Heads up!  You at least needs the title and date!";
    } else {
-       if(add_that_entry($title, $date, $time_spent, $learned, $resources)) {
+       }    if(add_that_entry($title, $date, $time_spent, $learned, $resources)) {
            header('Location: index.php');
            exit; 
        } else {
-           $error_msg = "Sorry, dude.  Couldn't add that one.";
-       }       
+           $error_msg = "Sorry, dude.  Couldn't add that one.";   
        
    } 
    

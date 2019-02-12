@@ -23,10 +23,16 @@
 
 //Add new entry: Created function to include all table elements to new entry
 
-function add_that_entry($title, $date, $time_spent, $learned, $resources) {
+function add_that_entry($title, $date, $time_spent, $learned, $resources, $entry_id= = null) {
     include ('connections.php');
+
+    if($entry_id) {
+        $sql = 'UPDATE entries SET title=?, date=?, time_spent=?, learned=?, resources=?';
+    } else {
    
     $sql = 'INSERT INTO entries(title, date, time_spent, learned, resources) VALUES(?,?,?,?,?)';
+    }
+
 
     try {
 $results = $db->prepare($sql);
@@ -35,6 +41,10 @@ $results->bindValue(2, $date, PDO::PARAM_STR);
 $results->bindValue(3, $time_spent, PDO::PARAM_STR);
 $results->bindValue(4, $learned, PDO::PARAM_STR);
 $results->bindValue(5, $resources, PDO::PARAM_STR);
+        if($entry_id) {
+            $results->bindValue(6, $entry_id, PDO::PARAM_INT);
+
+         }
 $results->execute();
 
 } catch(Exception $e) {  
