@@ -1,7 +1,7 @@
 <?php
-
 include ('inc/functions.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+   
    
    $title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING)); 
    $date = trim(filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING));
@@ -9,24 +9,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    $learned = trim(filter_input(INPUT_POST, 'whatILearned', FILTER_SANITIZE_STRING));
    $resources = trim(filter_input(INPUT_POST, 'ResourcesToRemember', FILTER_SANITIZE_STRING));
 
-
    //Create add/entry page that appropritely receives data from the user in each field displyed
    //An error messsage pops up if user neglects to input title and date
    //Calling the add entry function to add a new entry post to the list of entries
    //User is redirected to index.php once the form is submitted
-
    if (empty($title) || empty($date)) {
        $error_msg = "Yo!   Heads up!  You at least needs the title and date!";
+
    } else {
-       if (add_that_entry($title, $date, $time_spent, $learned, $resources))
+       if(add_that_entry($title, $date, $time_spent, $learned, $resources)) {
            header('Location: index.php');
            exit; 
+
        } else {
-           $error_msg = "Sorry, dude.  Couldn't add that one.";   
+           $error_msg = "Sorry, dude.  Couldn't add that one.";
+       }       
        
    } 
-   
-
+}
 
 ?>
 <!DOCTYPE html>
@@ -61,9 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <h2>New Entry</h2>
 
                      <?php
-                    /* if (isset($error_msg)) {
-                         echo "<p class = 'message'>$error_msg</p>"; */
-                     
+                     if (isset($error_msg)) {
+                         echo "<p class = 'message'>$error_msg</p>";
+                     }
                      
                      ?>
 

@@ -32,18 +32,18 @@ include ('inc/functions.php');
         <section>
             <div class="container">
                 <div class="edit-entry">
-                    <h2>>Edit Entry</h2>
+                    <h2><s href="edit.php?id=<?php echo $results['id']; ?>">Edit Entry</h2>
 
                  
                     <?php
                    /* $results = edit_that_entry($title, $date, $time_spent, $learned, $resources) {
                           ***sql statement here***
-                          $sql = 'INSERT INTO entries(title, date, time_spent, learned, resources) VALUES(?,?,?,?,?)';
-                         }
+                          $sql */
+
                          if(isset($_GET['id'])) {
                             list($entry_id, $title, $date, $time_spent, $learned, $resources) = edit_that_entry(filter_input (INPUT_GET, 'id, FILTER_SANITIZE_NUMBER_INT'));
                          }
-                         */
+                         
 
                          //Edit entry: Created function to edit selected entry
                             function edit_that_entry($title, $date, $time_spent, $learned, $resources) {
@@ -67,20 +67,7 @@ include ('inc/functions.php');
                             }
                             return true;
                             }  
-                            function show_that_entry() {
-                                include ('connections.php');
-                            try { 
-                            $sql =  'SELECT * FROM entries WHERE id=?';
-                            $results = $db->prepare($sql);
-                            $results->execute();
-                            } catch (Exception $e) {
-                                echo "Unable to update that entry. </br>";
-                                echo $e->getMessage();
-                            }
-                            $entries = $results->fetchAll();
-                            return $entries;
-                            }
-
+                            
                          ?>
 
                          
@@ -89,7 +76,7 @@ include ('inc/functions.php');
             
 
                     <form>
-                        <label for="title"> Title</label>
+                        <label for="title"<?php echo $results['title']; ?>> Title</label>
                         <input id="title" type="text" name="title"><br>
                         <label for="date">Date</label>
                         <input id="date" type="date" name="date"><br>
