@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    if (empty($title) || empty($date)) {
        $error_msg = "Yo!   Heads up!  You at least needs the title and date!";
    } else {
-       }    if(add_that_entry($title, $date, $time_spent, $learned, $resources)) {
+       if (add_that_entry($title, $date, $time_spent, $learned, $resources))
            header('Location: index.php');
            exit; 
        } else {
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        
    } 
    
-}
+
 
 ?>
 <!DOCTYPE html>
@@ -61,9 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <h2>New Entry</h2>
 
                      <?php
-                     if (isset($error_msg)) {
-                         echo "<p class = 'message'>$error_msg</p>";
-                     }
+                    /* if (isset($error_msg)) {
+                         echo "<p class = 'message'>$error_msg</p>"; */
+                     
                      
                      ?>
 

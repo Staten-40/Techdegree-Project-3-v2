@@ -34,17 +34,56 @@ include ('inc/functions.php');
                 <div class="edit-entry">
                     <h2>>Edit Entry</h2>
 
-                 <?php
-
+                 
+                    <?php
                    /* $results = edit_that_entry($title, $date, $time_spent, $learned, $resources) {
                           ***sql statement here***
                           $sql = 'INSERT INTO entries(title, date, time_spent, learned, resources) VALUES(?,?,?,?,?)';
-                         } */
+                         }
                          if(isset($_GET['id'])) {
                             list($entry_id, $title, $date, $time_spent, $learned, $resources) = edit_that_entry(filter_input (INPUT_GET, 'id, FILTER_SANITIZE_NUMBER_INT'));
                          }
+                         */
+
+                         //Edit entry: Created function to edit selected entry
+                            function edit_that_entry($title, $date, $time_spent, $learned, $resources) {
+                                include ('connections.php');
+                            
+                                $sql = 'UPDATE entries SET title=?, date=?, time_spent=?, learned=?, resources=? WHERE entry_id=?';
+
+                                try {                               
+                                
+                                $results = $db->prepare($sql);
+                                $results->bindValue(1, $title, PDO::PARAM_STR);
+                                $results->bindValue(2, $date, PDO::PARAM_STR);
+                                $results->bindValue(3, $time_spent, PDO::PARAM_STR);
+                                $results->bindValue(4, $learned, PDO::PARAM_STR);
+                                $results->bindValue(5, $resources, PDO::PARAM_STR);
+                                $results->bindValue(6, $entry_id, PDO::PARAM_INT);
+                                $results->execute();
+                                } catch(Exception $e) {  
+                                        echo "Error: " . $e->getMessage() . "<br />";
+                                        return false;
+                            }
+                            return true;
+                            }  
+                            function show_that_entry() {
+                                include ('connections.php');
+                            try { 
+                            $sql =  'SELECT * FROM entries WHERE id=?';
+                            $results = $db->prepare($sql);
+                            $results->execute();
+                            } catch (Exception $e) {
+                                echo "Unable to update that entry. </br>";
+                                echo $e->getMessage();
+                            }
+                            $entries = $results->fetchAll();
+                            return $entries;
+                            }
 
                          ?>
+
+                         
                     
 
             
