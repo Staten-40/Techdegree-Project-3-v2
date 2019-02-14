@@ -40,13 +40,14 @@ include ('inc/functions.php');
                           ***sql statement here***
                           $sql */
 
-                         if(isset($_GET['id'])) {
-                            list($entry_id, $title, $date, $time_spent, $learned, $resources) = edit_that_entry(filter_input (INPUT_GET, 'id, FILTER_SANITIZE_NUMBER_INT'));
-                         }
+                          $results = show_that_entry($_GET['id']);
+
+                          
+                         
                          
 
                          //Edit entry: Created function to edit selected entry
-                            function edit_that_entry($title, $date, $time_spent, $learned, $resources) {
+                            /*function edit_that_entry($title, $date, $time_spent, $learned, $resources) {
                                 include ('connections.php');
                             
                                 $sql = 'UPDATE entries SET title=?, date=?, time_spent=?, learned=?, resources=? WHERE entry_id=?';
@@ -66,17 +67,15 @@ include ('inc/functions.php');
                                         return false;
                             }
                             return true;
-                            }  
+                            }  */
                             
-                         ?>
-
-                         
+                         ?>                      
                     
 
             
 
                     <form>
-                        <label for="title"<?php echo $results['title']; ?>> Title</label>
+                        <label for="title">Title</label>
                         <input id="title" type="text" name="title"><br>
                         <label for="date">Date</label>
                         <input id="date" type="date" name="date"><br>

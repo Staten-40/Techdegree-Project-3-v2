@@ -48,4 +48,35 @@ try {
 $entry = $results->fetch(PDO::FETCH_ASSOC);
 return $entry;
 }
+
+//Edit entry: Created function to edit existing blog entries
+function edit_that_entry($title, $date, $time_spent, $learned, $resources) {
+
+    if(SERVER['REQUEST METHOD'] == 'POST') {
+
+    $sql = 'UPDATE entries SET title=?, date=?, time_spent=?, learned=?, resources=? WHERE entry_id=?';
+
+    $entry_id = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_NUMBER_INT)); 
+    $title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING)); 
+    $date = trim(filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING));
+    $time_spent = trim(filter_input(INPUT_POST, 'timeSpent', FILTER_SANITIZE_STRING));
+    $learned = trim(filter_input(INPUT_POST, 'whatILearned', FILTER_SANITIZE_STRING));
+    $resources = trim(filter_input(INPUT_POST, 'ResourcesToRemember', FILTER_SANITIZE_STRING));
+    }
+
+    if (empty($title) || empty($date)) {
+        $error_msg = "PSST!  Hey, you at least needs the title and date!";
+ 
+    } else {
+        if(edit_that_entry($title, $date, $time_spent, $learned, $resources, $entry_id)) {
+            header('Location: detail.php');
+            exit; 
+ 
+        } else {
+            $error_msg = "Sorry, dude.  Couldn't edit that one.";
+        }       
+        
+    }
+
+
 ?>
