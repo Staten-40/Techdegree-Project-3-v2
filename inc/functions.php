@@ -62,7 +62,7 @@ function edit_that_entry($title, $date, $time_spent, $learned, $resources) {
     $time_spent = trim(filter_input(INPUT_POST, 'timeSpent', FILTER_SANITIZE_STRING));
     $learned = trim(filter_input(INPUT_POST, 'whatILearned', FILTER_SANITIZE_STRING));
     $resources = trim(filter_input(INPUT_POST, 'ResourcesToRemember', FILTER_SANITIZE_STRING));
-    }
+    
 
     if (empty($title) || empty($date)) {
         $error_msg = "PSST!  Hey, you at least needs the title and date!";
@@ -73,10 +73,9 @@ function edit_that_entry($title, $date, $time_spent, $learned, $resources) {
             exit; 
  
         } else {
-            $error_msg = "Sorry, dude.  Couldn't edit that one.";
+            $error_msg = "Bummer.  Couldn't edit that one.";
         }       
         
     }
-
-
-?>
+}
+ ?>  
