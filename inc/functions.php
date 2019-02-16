@@ -24,7 +24,7 @@ function add_that_entry($title, $date, $time_spent, $learned, $resources, $id=nu
         $sql = 'UPDATE entries SET title=?, date=?, time_spent=?, learned=?, resources=? WHERE id=?';
     } else {
    
-    $sql = 'INSERT INTO entries(title, date, time_spent, learned, resources) VALUES(?,?,?,?,?)';
+        $sql = 'INSERT INTO entries(title, date, time_spent, learned, resources) VALUES(?,?,?,?,?)';
     }
     try {
 $results = $db->prepare($sql);

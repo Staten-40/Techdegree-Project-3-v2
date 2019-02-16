@@ -1,6 +1,41 @@
 <?php
 include ('inc/functions.php');
-$results = show_that_entry($_GET['id']);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $results = show_that_entry[$_POST];
+    
+    $title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING)); 
+    $date = trim(filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING));
+    $time_spent = trim(filter_input(INPUT_POST, 'timeSpent', FILTER_SANITIZE_STRING));
+    $learned = trim(filter_input(INPUT_POST, 'whatILearned', FILTER_SANITIZE_STRING));
+    $resources = trim(filter_input(INPUT_POST, 'ResourcesToRemember', FILTER_SANITIZE_STRING));
+    $id = trim(filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT));
+    var_dump($id);
+ 
+    //Create add/entry page that appropritely receives data from the user in each field displyed
+    //An error messsage pops up if user neglects to input title and date
+    //Calling the add entry function to add a new entry post to the list of entries
+    //User is redirected to index.php once the form is submitted
+    if (empty($title) || empty($date)) {
+        $error_msg = "Yo!   Heads up!  You at least needs the title and date!";
+ 
+    } else {
+        if(add_that_entry($title, $date, $time_spent, $learned, $resources, $id)) {
+            header('Location: index.php');
+            exit; 
+ 
+        } else {
+            $error_msg = "Sorry, dude.  Couldn't add that one.";
+        }       
+        
+    } 
+ } else {
+
+    $results = show_that_entry($_GET['id']);
+ }
+
+
+
 
 /*if(isset($_GET['id'])) {
     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
@@ -80,17 +115,16 @@ $results = show_that_entry($_GET['id']);
 
                     <form method="post" action="edit.php">
                         <label for="title" >Title</label>
-                        <input id="title" type="text" name="title"> value="<?php //echo $results['title']; ?>"<br>
+                        <input id="title" type="text" name="title" value="<?php echo $results['title']; ?>"> <br>
                         <label for="date">Date</label>
-                        <input id="date" type="date" name="date" value="<?php //echo $results['date']; ?>"><br>
+                        <input id="date" type="date" name="date" value="<?php echo $results['date']; ?>"><br>
                         <label for="time-spent"> Time Spent</label>
-                        <input id="time-spent" type="text" name="timeSpent"> value="<?php //echo $results['time_spent']; ?>"<br>
+                        <input id="time-spent" type="text" name="timeSpent" value="<?php echo $results['time_spent']; ?>"> <br>
                         <label for="what-i-learned">What I Learned</label>
-                        <textarea id="what-i-learned" rows="5" name="whatILearned"></textarea>
-                        <input hidden="id" name ="id" value="<?php echo $results['lerrned'];?>">
+                        <textarea id="what-i-learned" rows="5" name="whatILearned"><?php echo $results['learned']; ?></textarea>
                         <label for="resources-to-remember">Resources to Remember</label>
-                        <textarea id="resources-to-remember" rows="5" name="ResourcesToRemember"></textarea>
-                        <input hidden="id" name ="id" value="<?php echo $results['resources'];?>"-->>
+                        <textarea id="resources-to-remember" rows="5" name="ResourcesToRemember"><?php echo $results['resources']; ?></textarea>
+                        <input hidden="id" name="id" value="<?php echo $results['id'];?>">
                         <input type="submit" value="Publish Entry" class="button">
                         <a href="#" class="button button-secondary">Cancel</a><input type='submit' class='button--delete' value='Delete' />
                     </form>

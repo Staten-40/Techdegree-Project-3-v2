@@ -72,7 +72,7 @@ $results = show_that_entry($_GET['id']);
             </div>
             <div class="edit">
             <!-- Push to the edit page -->
-                <p><a href="edit.php?id=?<?php echo $results['id']; ?>">Edit Entry</a></p>
+                <p><a href="edit.php?id=<?php echo $results['id']; ?>">Edit Entry</a></p>
             </div>
         </section>
         <footer>
