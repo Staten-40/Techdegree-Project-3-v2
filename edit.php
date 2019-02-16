@@ -92,7 +92,7 @@ $results = show_that_entry($_GET['id']);
                         <textarea id="resources-to-remember" rows="5" name="ResourcesToRemember"></textarea>
                         <input hidden="id" name ="id" value="<?php //echo $results['id']?>"-->>
                         <input type="submit" value="Publish Entry" class="button">
-                        <a href="#" class="button button-secondary">Cancel</a>
+                        <a href="#" class="button button-secondary">Cancel</a><input type='submit' class='button--delete' value='Delete' />
                     </form>
                 </div>
             </div>

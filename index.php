@@ -43,10 +43,11 @@ include ('inc/functions.php');
                     echo '<time datetime="2016-01-02'. $entry['date'] . '" > '. $date2  . '</time></article>';
                     echo "<form method= 'post' action='inc/detail.php>' \n";
                     echo "input type='hidden' value='" . $entry['id'] . "' name='delete' /> \n";
-                    echo "input type='submit' class='button' value='Delete' />";
                     echo "</form>";
                     }
                     ?>
+
+                    
 
 
                        <!--<h2><a href="detail.html">The Best Day I’ve Ever Had</a></h2>
