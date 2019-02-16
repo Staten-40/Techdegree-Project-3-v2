@@ -1,5 +1,11 @@
 <?php
 include ('inc/functions.php');
+
+//The New Entry Page
+//User data fields are sanaitized to prevent potentilly harmful data input
+//Error messages created if fields title/date left blank or the post is unable to be added due to potentially harmful data
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    $results = show_that_entry[$_POST];
    
@@ -49,20 +55,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <body>
       <?php include('inc/header.php'); ?>
 
-       <!-- <header> 
-            <div class="container">
-                <div class="site-header">
-                    <a class="logo" href="index.php"><i class="material-icons">library_books</i></a>
-                    <a class="button icon-right" href="new.php"><span>New Entry</span> <i class="material-icons">add</i></a>
-                </div>
-            </div>
-        </header> -->
-        <section>
+         <section>
             <div class="container">
                 <div class="new-entry">
                     <h2>New Entry</h2>
 
                      <?php
+
+                     //Echos error messsge if the error message is set
+                     
                      if (isset($error_msg)) {
                          echo "<p class = 'message'>$error_msg</p>";
                      }

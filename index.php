@@ -19,21 +19,12 @@ include ('inc/functions.php');
       <!--Included header to index.php -->
       
       <?php include ('inc/header.php'); ?>
-
-       <!-- Header separated in its own inc/.php file
-       <header>
-            <div class="container">
-                <div class="site-header">
-                    <a class="logo" href="index.php"><i class="material-icons">library_books</i></a>
-                    <a class="button icon-right" href="new.html"><span>New Entry</span> <i class="material-icons">add</i></a>
-                </div>
-            </div>
-        </header> -->
+    
         <section>
             <div class="container"> 
                 <div class="entry-list">
 
-                    <!-- List view created to contain a list of journal entries, each hyperlinked to a detail page -->
+                    <!-- List view created to contain a list of journal entries, each hyperlinked to its own page with option to edit -->
                     
                     <?php
                     foreach(get_them_entries() as $entry) {                           
@@ -46,31 +37,13 @@ include ('inc/functions.php');
                     echo "</form>";
                     }
                     ?>
-
-                    
-
-
-                       <!--<h2><a href="detail.html">The Best Day I’ve Ever Had</a></h2>
-                        <time datetime="2016-01-31">January 31, 2016</time>
-                    </article>
-                    <article>
-                        <h2><a href="detail_2.html">The Absolute Worst Day I’ve Ever Had</a></h2>
-                        <time datetime="2016-01-31">January 31, 2016</time>
-                    </article>
-                    <article>
-                        <h2><a href="detail_3.html">That Time at the Mall</a></h2>
-                        <time datetime="2016-01-31">January 31, 2016</time>
-                    </article>
-                    <article>
-                        <h2><a href="detail_4.html">"Dude, where’s my car?"</a></h2>
-                        <time datetime="2016-01-31">January 31, 2016</time>
-                    </article> -->
-
                     
                 </div>
             </div>
         </section>
+
         <!-- Footer separated in it's own inc/.php file -->
+
         <footer>
             <div>
                 &copy; MyJournal

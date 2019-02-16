@@ -249,8 +249,14 @@ input[type=submit] {
 }
 
 .button--delete {
+
 	background: rgb(116, 3, 3);
-	color: white;
+	color: yellow;
+	border-radius: 50px rgb(116, 3, 3);
+	width: 25%;
+	text-align: center;
+	margin: auto;
+
 }
 
 
