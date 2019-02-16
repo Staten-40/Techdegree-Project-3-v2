@@ -1,13 +1,14 @@
 <?php
 include ('inc/functions.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-   
+   $results = show_that_entry[$_POST];
    
    $title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING)); 
    $date = trim(filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING));
    $time_spent = trim(filter_input(INPUT_POST, 'timeSpent', FILTER_SANITIZE_STRING));
    $learned = trim(filter_input(INPUT_POST, 'whatILearned', FILTER_SANITIZE_STRING));
    $resources = trim(filter_input(INPUT_POST, 'ResourcesToRemember', FILTER_SANITIZE_STRING));
+   $id = trim(filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT));
 
    //Create add/entry page that appropritely receives data from the user in each field displyed
    //An error messsage pops up if user neglects to input title and date
