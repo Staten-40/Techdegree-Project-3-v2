@@ -2,10 +2,10 @@
 include ('inc/functions.php');
 $results = show_that_entry($_GET['id']);
 
-if(isset($_GET['id'])) {
+/*if(isset($_GET['id'])) {
     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
-}
+} */
 ?>
 <!DOCTYPE html>
 <html>
@@ -80,17 +80,17 @@ if(isset($_GET['id'])) {
 
                     <form method="post" action="edit.php">
                         <label for="title" >Title</label>
-                        <input id="title" type="text" name="title"> value="<?php echo $results['id']; ?>"<br>
+                        <input id="title" type="text" name="title"> value="<?php //echo $results['id']; ?>"<br>
                         <label for="date">Date</label>
-                        <input id="date" type="date" name="date" value="<?php echo $results['id']; ?>"><br>
+                        <input id="date" type="date" name="date" value="<?php //echo $results['id']; ?>"><br>
                         <label for="time-spent"> Time Spent</label>
-                        <input id="time-spent" type="text" name="timeSpent"> value="<?php echo $results['id']; ?>"<br>
+                        <input id="time-spent" type="text" name="timeSpent"> value="<?php //echo $results['id']; ?>"<br>
                         <label for="what-i-learned">What I Learned</label>
                         <textarea id="what-i-learned" rows="5" name="whatILearned"></textarea>
-                        <input hidden="id" name ="id" value="<?php echo $results['id']?>">
+                        <input hidden="id" name ="id" value="<?php //echo $results['id']?>">
                         <label for="resources-to-remember">Resources to Remember</label>
                         <textarea id="resources-to-remember" rows="5" name="ResourcesToRemember"></textarea>
-                        <input hidden="id" name ="id" value="<?php echo $results['id']?>">
+                        <input hidden="id" name ="id" value="<?php //echo $results['id']?>"-->>
                         <input type="submit" value="Publish Entry" class="button">
                         <a href="#" class="button button-secondary">Cancel</a>
                     </form>

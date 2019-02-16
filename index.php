@@ -41,6 +41,10 @@ include ('inc/functions.php');
 
                     echo '<article><h2><a href="detail.php?id=' . $entry['id'] .  ' " > ' . $entry['title'] . "</a></h2>";
                     echo '<time datetime="2016-01-02'. $entry['date'] . '" > '. $date2  . '</time></article>';
+                    echo "<form method= 'post' action='inc/detail.php>' \n";
+                    echo "input type='hidden' value='" . $entry[id] . "' name='delete' /> \n";
+                    echo "input type='submit' class='button--delete' value='Delete' />";
+                    echo "<\form>";
                     }
                     ?>
 

@@ -15,6 +15,7 @@
  return $entries;
  
 }
+
 //Add new entry: Created function to include all table elements to new entry
 //The if/else statement states tht if an entry id doesn't already exit to create a new entry id.
 function add_that_entry($title, $date, $time_spent, $learned, $resources, $id=null) {
@@ -42,6 +43,7 @@ $results->execute();
    }
    return true;
  }  
+ 
 function show_that_entry($id) {
     include ('connections.php');
 try { 
@@ -56,5 +58,23 @@ try {
 $entry = $results->fetch(PDO::FETCH_ASSOC);
 return $entry;
 }
+
+function delete_entry($id) {
+    include ('connections.php');
+    
+    $sql =  'DELETE  FROM entries WHERE id=?';
+
+try {   
+   $results = $db->prepare($sql);
+   $results->bindValue(1, $id, PDO::PARAM_STR);
+   $results->execute();
+} catch (Exception $e) {
+    echo "Unable to get that entry. </br>";
+    echo $e->getMessage();
+    return false;
+}
+$return true;
+}
+
 ?>
  
