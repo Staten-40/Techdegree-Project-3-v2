@@ -80,17 +80,17 @@ $results = show_that_entry($_GET['id']);
 
                     <form method="post" action="edit.php">
                         <label for="title" >Title</label>
-                        <input id="title" type="text" name="title"> value="<?php //echo $results['id']; ?>"<br>
+                        <input id="title" type="text" name="title"> value="<?php //echo $results['title']; ?>"<br>
                         <label for="date">Date</label>
-                        <input id="date" type="date" name="date" value="<?php //echo $results['id']; ?>"><br>
+                        <input id="date" type="date" name="date" value="<?php //echo $results['date']; ?>"><br>
                         <label for="time-spent"> Time Spent</label>
-                        <input id="time-spent" type="text" name="timeSpent"> value="<?php //echo $results['id']; ?>"<br>
+                        <input id="time-spent" type="text" name="timeSpent"> value="<?php //echo $results['time_spent']; ?>"<br>
                         <label for="what-i-learned">What I Learned</label>
                         <textarea id="what-i-learned" rows="5" name="whatILearned"></textarea>
-                        <input hidden="id" name ="id" value="<?php //echo $results['id']?>">
+                        <input hidden="id" name ="id" value="<?php echo $results['lerrned'];?>">
                         <label for="resources-to-remember">Resources to Remember</label>
                         <textarea id="resources-to-remember" rows="5" name="ResourcesToRemember"></textarea>
-                        <input hidden="id" name ="id" value="<?php //echo $results['id']?>"-->>
+                        <input hidden="id" name ="id" value="<?php echo $results['resources'];?>"-->>
                         <input type="submit" value="Publish Entry" class="button">
                         <a href="#" class="button button-secondary">Cancel</a><input type='submit' class='button--delete' value='Delete' />
                     </form>
