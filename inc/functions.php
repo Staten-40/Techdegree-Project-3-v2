@@ -69,11 +69,10 @@ try {
    $results->bindValue(1, $id, PDO::PARAM_STR);
    $results->execute();
 } catch (Exception $e) {
-    echo "Unable to get that entry. </br>";
     echo $e->getMessage();
     return false;
 }
-$return true;
+//$return true;
 }
 
 ?>
