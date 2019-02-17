@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    //Calling the add entry function to add a new entry post to the list of entries
    //User is redirected to index.php once the form is submitted
    if (empty($title) || empty($date)) {
-       $error_msg = "Yo!   Heads up!  You at least needs the title and date!";
+       $error_msg = "Yo!   Heads up!  You at least need the title and date!";
 
    } else {
        if(add_that_entry($title, $date, $time_spent, $learned, $resources)) {
